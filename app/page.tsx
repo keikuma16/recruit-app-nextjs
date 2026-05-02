@@ -38,7 +38,7 @@ export default async function Home({
           <JobSearch/>
         </aside>
 
-        <section className="flex-1 min-w-">
+        <section className="flex-1 w-60%">
           <div className="flex justify-between items-end mb-6">
             <h2 className="text-2xl font-bold text-slate-800">求人一覧</h2>
             <p className="text-gray-500 font-medium">該当件数:{jobs?.length || 0}件</p>

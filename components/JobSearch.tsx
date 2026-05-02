@@ -57,10 +57,10 @@ export default function JobSearch() {
                 onChange={(e) => handleMinSalaryChange(e.target.value)}
                 value={currentSalary}
                 >
-                <option value="0">全選択</option>
-                <option value="300">300万円以上</option>
-                <option value="500">500万円以上</option>
-                <option value="700">700万円以上</option>
+                <option value="0" className="text-black">全選択</option>
+                <option value="300" className="text-black">300万円以上</option>
+                <option value="500" className="text-black">500万円以上</option>
+                <option value="700" className="text-black">700万円以上</option>
                 </select>
             </section>
         
