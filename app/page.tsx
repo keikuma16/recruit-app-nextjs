@@ -30,7 +30,7 @@ export default async function Home({
       <header className="bg-slate-800 text-white p-4">
         <div className="max-w-6xl mx-auto flex justify-between items-center">
           <h1 className="text-xl font-bold">求人検索アプリ</h1>
-          <Link href="/post" className="hover:text-sky-300 transition-colors">求人投稿</Link>
+          <Link href="/post" className="hover:underline">求人投稿</Link>
         </div>
       </header>
       <main className="max-w-6xl mx-auto py-8 px-4  flex gap-8">

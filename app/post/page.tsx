@@ -25,7 +25,7 @@ export default function PostPage() {
             <header className="bg-slate-800 text-white p-4 shadow-md">
                 <div className="max-w-6xl mx-auto flex justify-between items-center">
                     <h1 className="text-2xl font-bold">求人検索アプリ</h1>
-                    <Link href="/" className="hover:text-sky-300 trandition-colors">求人一覧</Link>
+                    <Link href="/" className="hover:underline">求人一覧</Link>
                 </div>
             </header>
 
