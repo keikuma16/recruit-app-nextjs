@@ -34,7 +34,7 @@ export default async function Home({
         </div>
       </header>
       <main className="max-w-6xl mx-auto py-8 px-4  flex gap-8">
-        <aside className="w-48 flex-shrink-0">
+        <aside className="w-30 flex-shrink-0">
           <JobSearch/>
         </aside>
 
