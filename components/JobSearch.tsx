@@ -35,25 +35,25 @@ export default function JobSearch() {
     return (
         <div>            
             <section>
-                <h2 className="font-bold mb-4 border-b pb-2">求人カテゴリ</h2>
+                <h2 className="font-bold mb-4 border-b pb-2 text-black">求人カテゴリ</h2>
                 <div className="space-y-2">
                 {CATEGORIES.map(c => (
-                    <label key={c} className="flex items-center gap-2 cursor-pointer">
-                    <input 
-                    className="accent-slate-700" 
-                    type="checkbox" 
-                    checked={currentCategories.includes(c)}
-                    onChange={() => handleCategoryChange(c)} 
-                    />
+                    <label key={c} className="flex items-center gap-2 cursor-pointer text-black">
+                        <input 
+                        className="accent-slate-700" 
+                        type="checkbox" 
+                        checked={currentCategories.includes(c)}
+                        onChange={() => handleCategoryChange(c)} 
+                        />
                         {c}
                     </label>
                 ))}
                 </div>
             </section>
             <section>
-                <h2 className="font-bold mb-4 border-b pb-2">年収</h2>
+                <h2 className="font-bold mb-4 border-b pb-2 text-black">年収</h2>
                 <select
-                className="w-full border rounded p-2" 
+                className="w-full border border-slate-300 rounded p-2 " 
                 onChange={(e) => handleMinSalaryChange(e.target.value)}
                 value={currentSalary}
                 >

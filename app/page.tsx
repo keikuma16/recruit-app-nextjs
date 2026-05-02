@@ -1,13 +1,30 @@
+export const dynamic = 'force-dynamic';
 export const revalidate = 0;
-import Image from "next/image";
 import JobList from "@/components/JobList";
 import JobSearch from "@/components/JobSearch";
 import { supabase } from"@/lib/supabase";
 import Link from "next/link";
 
-export default async function Home() {
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  const resolvedParams = await searchParams;
+  const categories = resolvedParams.category
+    ? Array.isArray(resolvedParams.category)
+      ? resolvedParams.category
+      : [resolvedParams.category]
+    : [];
+  const salary = resolvedParams.salary ? Number(resolvedParams.salary) : 0;
   let query = supabase.from('jobs').select('*');
-  const { data: jobs } = await query
+  if (categories.length > 0) {
+    query = query.in('category', categories);
+  }
+  if (salary > 0) {
+    query = query.gte('salary', salary);
+  }
+  const { data: jobs } = await query;
   return (
     <div className="min-h-screen bg-gray-50">
       <header className="bg-slate-800 text-white p-4">
@@ -21,7 +38,7 @@ export default async function Home() {
           <JobSearch/>
         </aside>
 
-        <section className="flex-1">
+        <section className="flex-1 min-w-">
           <div className="flex justify-between items-end mb-6">
             <h2 className="text-2xl font-bold text-slate-800">求人一覧</h2>
             <p className="text-gray-500 font-medium">該当件数:{jobs?.length || 0}件</p>
