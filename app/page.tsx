@@ -34,11 +34,11 @@ export default async function Home({
         </div>
       </header>
       <main className="max-w-6xl mx-auto py-8 px-4  flex gap-8">
-        <aside>
+        <aside className="w-64 flex-shrink-0">
           <JobSearch/>
         </aside>
 
-        <section className="flex-1 w-60%">
+        <section className="flex-1 min-w-0">
           <div className="flex justify-between items-end mb-6">
             <h2 className="text-2xl font-bold text-slate-800">求人一覧</h2>
             <p className="text-gray-500 font-medium">該当件数:{jobs?.length || 0}件</p>
